@@ -7,6 +7,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by Franz on 2017-05-31.
+ * This class define and create the database and database reference for the project.
  */
 
 public class MyApplicationData extends Application {

@@ -28,6 +28,7 @@ public class CreateBusinessAcitivity extends Activity {
      * This is the onCreate method which map and initialize all fields that
      * used by create_business_activities. It also set up and handle the spinner to provide
      * drop-down list for user chose their primary business and province/territory.
+     *
      * @param savedInstanceState is the current instance state
      */
     @Override
@@ -54,6 +55,13 @@ public class CreateBusinessAcitivity extends Activity {
 
         //find what user selected
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * This method used to response when there is an item being selected in spinner
+             * @param adapterView is the current view
+             * @param view is the view been clicked within adapterView
+             * @param i is the number of the view being selected
+             * @param l is the row id of the item
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 primarySelect = adapterView.getItemAtPosition(i).toString();
@@ -61,6 +69,10 @@ public class CreateBusinessAcitivity extends Activity {
                     primarySelect = null;
             }
 
+            /**
+             * THis method is used when there the selected item become not available in the spinner
+             * @param adapterView is the view of the spinner
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 primarySelect = null;
@@ -69,6 +81,13 @@ public class CreateBusinessAcitivity extends Activity {
 
 
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * This method used to response when there is an item being selected in spinner
+             * @param adapterView is the current view
+             * @param view is the view been clicked within adapterView
+             * @param i is the number of the view being selected
+             * @param l is the row id of the item
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 provinceSelect = adapterView.getItemAtPosition(i).toString();
@@ -77,6 +96,10 @@ public class CreateBusinessAcitivity extends Activity {
 
             }
 
+            /**
+             * THis method is used when there the selected item become not available in the spinner
+             * @param adapterView is the view of the spinner
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 provinceSelect = null;
@@ -86,6 +109,7 @@ public class CreateBusinessAcitivity extends Activity {
 
     /**
      * This method retrieve and store all the business detail from view
+     *
      * @param v is the view of current corresponding activities.
      */
     public void submitInfoButton(View v) {

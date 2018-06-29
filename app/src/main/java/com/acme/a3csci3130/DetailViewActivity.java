@@ -26,6 +26,7 @@ public class DetailViewActivity extends Activity {
     /**
      * This is the onCreate method which retrieve all the information of a particular business
      * and display to user to edit.
+     *
      * @param savedInstanceState is the current instance state
      */
     @Override
@@ -101,6 +102,7 @@ public class DetailViewActivity extends Activity {
                 if (provinceSelect.equals("Please select your province/territory"))
                     provinceSelect = null;
             }
+
             /**
              * THis method is used when there the selected item become not available in the spinner
              * @param adapterView is the view of the spinner
@@ -114,6 +116,7 @@ public class DetailViewActivity extends Activity {
 
     /**
      * This method retrieved all the information that user edit from view and upload it to database
+     *
      * @param v is the current view
      */
     public void updateBusiness(View v) {
@@ -130,6 +133,7 @@ public class DetailViewActivity extends Activity {
 
     /**
      * This method delete current selected Business from database and return to main activities.
+     *
      * @param v is the current view
      */
     public void eraseContact(View v) {

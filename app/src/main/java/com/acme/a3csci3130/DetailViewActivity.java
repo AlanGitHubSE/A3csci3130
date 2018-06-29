@@ -63,6 +63,13 @@ public class DetailViewActivity extends Activity {
 
         //find what user selected
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * This method used to response when there is an item being selected in spinner
+             * @param adapterView is the current view
+             * @param view is the view been clicked within adapterView
+             * @param i is the number of the view being selected
+             * @param l is the row id of the item
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 primarySelect = adapterView.getItemAtPosition(i).toString();
@@ -70,6 +77,10 @@ public class DetailViewActivity extends Activity {
                     primarySelect = null;
             }
 
+            /**
+             * THis method is used when there the selected item become not available in the spinner
+             * @param adapterView is the view of the spinner
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 primarySelect = null;
@@ -77,13 +88,23 @@ public class DetailViewActivity extends Activity {
         });
 
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * This method used to response when there is an item being selected in spinner
+             * @param adapterView is the current view
+             * @param view is the view been clicked within adapterView
+             * @param i is the number of the view being selected
+             * @param l is the row id of the item
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 provinceSelect = adapterView.getItemAtPosition(i).toString();
                 if (provinceSelect.equals("Please select your province/territory"))
                     provinceSelect = null;
             }
-
+            /**
+             * THis method is used when there the selected item become not available in the spinner
+             * @param adapterView is the view of the spinner
+             */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 provinceSelect = null;

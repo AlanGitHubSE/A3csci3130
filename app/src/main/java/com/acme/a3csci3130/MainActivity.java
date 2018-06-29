@@ -73,10 +73,6 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    /**
-     * This method store the user-clicked Business into intent and jump to detail view activity
-     * @param business
-     */
     private void showDetailView(Business business)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);

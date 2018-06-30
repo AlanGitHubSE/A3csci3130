@@ -86,6 +86,43 @@ public class EspressoTest {
         pressBack();
     }
 
+
+    @Test
+    public void A_CreateBusinessTestWrong() throws InterruptedException {
+        onView(withId(R.id.submitButton)).perform(click());
+
+        //type business number
+        onView(withId(R.id.businessNum)).perform(typeText("1"));
+        closeSoftKeyboard();
+        //type name
+        onView(withId(R.id.Name)).perform(typeText("Tester"));
+        closeSoftKeyboard();
+        //Click primary business
+        onView(withId(R.id.spinner)).perform(click());
+        onData(allOf(is(instanceOf(String.class)))).atPosition(1).perform(click());
+        //type address
+        onView(withId(R.id.address_field)).perform(typeText("Test Address"));
+        closeSoftKeyboard();
+        //Click province
+        onView(withId(R.id.spinner2)).perform(click());
+        onData(allOf(is(instanceOf(String.class)))).atPosition(1).perform(click());
+        closeSoftKeyboard();
+        //submit
+        onView(withId(R.id.createButton)).perform(click());
+
+        Thread.sleep(1000);
+        //check data
+        onData(anything()).inAdapterView(withId(R.id.listView)).atPosition(0).perform(click());
+        onView(withId(R.id.businessNum2)).check(matches(withText("1234567890")));
+        onView(withId(R.id.Name2)).check(matches(withText("Tester")));
+        onView(withId(R.id.spinner3)).check(matches(withSpinnerText(containsString("Fisher"))));
+        onView(withId(R.id.address_field2)).check(matches(withText("Test Address")));
+        onView(withId(R.id.spinner4)).check(matches(withSpinnerText(containsString("AB"))));
+
+        pressBack();
+    }
+
+
     /**
      * This method will click into a business that has been created, and change all its fields and
      * re-validate its information to make sure the information is indeed changed and stored.

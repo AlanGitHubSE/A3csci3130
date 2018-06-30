@@ -66,7 +66,7 @@ public class CreateBusinessAcitivity extends Activity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 primarySelect = adapterView.getItemAtPosition(i).toString();
                 if (primarySelect.equals("Please select your primary Business"))
-                    primarySelect = null;
+                    primarySelect = "";
             }
 
             /**
@@ -75,7 +75,7 @@ public class CreateBusinessAcitivity extends Activity {
              */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                primarySelect = null;
+                primarySelect = "";
             }
         });
 
@@ -92,7 +92,7 @@ public class CreateBusinessAcitivity extends Activity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 provinceSelect = adapterView.getItemAtPosition(i).toString();
                 if (provinceSelect.equals("Please select your province/territory"))
-                    provinceSelect = null;
+                    provinceSelect = "";
 
             }
 
@@ -102,7 +102,7 @@ public class CreateBusinessAcitivity extends Activity {
              */
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                provinceSelect = null;
+                provinceSelect = "";
             }
         });
     }
